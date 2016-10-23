@@ -105,8 +105,7 @@ Template.dashboard.onRendered(function (){
     //alert(JSON.stringify(params));
     
     
-    
-    //// Right Appending
+     //// Right Appending
     var node2 = "<p> First Name "+ Session.get("fName") +" </p>"
     $("#rightDash").append(node2);
     node2 = "<p> Last Name "+ Session.get("lName") +" </p>";
@@ -132,12 +131,22 @@ Template.dashboard.onRendered(function (){
     
 });
 
-Template.clientTimeline.helpers({
-   checkInDate: function() {
-        //return ClientHistory.find({fName: '', lName: '', dob: ''});
-       return ClientHistory.find({});
+
+Template.clientTimeline.onRendered(function (){
+    console.log(ClientHistory.find().count());
+   var res = ClientHistory.find();
+    var length = res.count();
+    var i = 0;
+    console.log("length is "+length );
+    while(i < length){
+        
+         var node = "<div>Checked In: "+res.fetch()[i].checkInDate+"<br>Checked Out: "+res.fetch()[i].checkOutDate+" </div>";
+    $("#timeline").append(node);
+        i++;
     }
+   
 });
+
 
 Router.map(function() {//Maps out all the routes
   //this.route('/dashboard', {path: '/dashboard'});
@@ -150,7 +159,7 @@ Router.map(function() {//Maps out all the routes
         };
     }
 });*/
-    this.route('clientTimeline');
+  
     this.route('dashboard', {
   // get parameter via this.params
   path: '/posts/:fName&:lName&:nName&:dob&:gender&:ssn&:consent&:refer&:risk1&risk2&:risk3'
@@ -185,7 +194,8 @@ Router.map(function() {//Maps out all the routes
         waitOn: function() {
         return [
             Meteor.subscribe('availableServices'),
-            Meteor.subscribe('agencies')
+            Meteor.subscribe('agencies'),
+            
         ];
     }
     });
@@ -195,7 +205,13 @@ Router.map(function() {//Maps out all the routes
               var fN = params.fN;
               });*/
    this.route('/checkin', {path:'/'}); 
- 
+ this.route('clientTimeline',{
+        waitOn: function() {
+        return [ 
+          Meteor.subscribe('clientHist'),
+             ];
+    }
+    });
     
     this.route('test',{
         waitOn: function() {
