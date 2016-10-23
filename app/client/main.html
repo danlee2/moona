@@ -4,8 +4,6 @@
 
 <body>
   <h1>Welcome to Meteor!</h1>
-
-
 </body>
 
 <template name="hello">
@@ -32,11 +30,11 @@
 
 <template name="checkin">
 
-    
+
     <style>
-    
+
     #turnModal {
-        
+
         background-color: green;
         visibility: hidden;
         display: none;
@@ -73,9 +71,9 @@
           <input type='radio'  value='4' />Other<br />
           <input type='radio'  value='4' />None<br />
       </form>
-      
+
     </div>
-    
+
     <div>
       <h2>
         RISKS
@@ -99,7 +97,7 @@
 <input id="takeIn" value="Take In" type="Button">
     <div id="turnModal">
     {{>turnAwayModal}}
-    
+
     </div>
 </template>
 
@@ -108,6 +106,6 @@
 <p> Are you sure that you want turn away?</p>
 <input id="yesTurn" type="button" value="Yes">
 <input id="noTurn" type="button" value="No">
-    
-    
+
+
 </template>
