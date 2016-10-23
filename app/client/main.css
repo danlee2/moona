@@ -9,13 +9,13 @@
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
+abbr, address, cite, code, 
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
 b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+table, caption, tbody, tfoot, thead, tr, th, td, 
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
@@ -61,14 +61,14 @@ a {
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
+    background-color:#59F7DF;
     color:#000;
     text-decoration:none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
+    background-color:#59F7DF;
     color:#000;
     font-style:italic;
     font-weight:bold;
@@ -106,7 +106,6 @@ input, select {
 
 body {
   font: 100%/1.6 'Open Sans', sans-serif;
-  font-weight: 400;
   margin: 0 auto;
   padding: 2em;
   text-align: left;
@@ -115,12 +114,12 @@ body {
 /* Styling links*/
 
 a {
-	color: #ee2418;
+	color: black;
 	text-decoration:none;
 	transition: all .5s ease;
 	}
 a:visited {
-	color: #ee2418;
+	color: black;
 	}
 
 a:hover {
@@ -138,13 +137,11 @@ img {
 
 
 h1, h2, h3 {
-	font-weight: 900;
 	margin:0;
 	padding:0;
 	}
 
 h1 {
-	font-size: 2.5em; /*40px*/
 	line-height:1.1;
 	}
 
@@ -157,34 +154,51 @@ h1 a:visited {
 	}
 
 a:hover h3,
-h1 a:hover {
-	color: #ee2418;
-	}
-
+h1.banner{
+    text-align:center;
+    font-size: 36px;
+    background: #59F7DF
+;
+    padding: 20px 0px;
+    color: white;
+    
+}
 h2 {
-	font-size: 1.875em; /*30px*/
 	margin-top: .5em;
 	text-transform: uppercase;
+    font-size: 24px
 }
 
 h3 {
-	font-size: 1.25em; /* 20px*/
 	margin: 1.5em 0 0 0;
 	line-height:1;
+    font-size: 20px;
 	}
 
 
-/* ============ GOLBAL ELEMENTS ============ */
+/* ============ GLOBAL ELEMENTS ============ */
 
 .section__headline {
-  border-left: 10px solid #2196F3;
+  border-left: 10px solid #03A9F4;
   padding-left: 20px;
 }
 /* ============ DASHBOARD PAGE ============ */
+div#leftDash,
+div#rightDash{
+    text-align: center;
+    padding-left: 20px;
+    border-color: #0D47A1;
+    background-color: #B9F6CA
+
+
+}
 
 .dashboard-section__headline {
   color: #2196F3;
 }
+
+
+
 /* ============ ASSIGNMENT ROW COMPONENT ============ */
 /* ============ ASSIGNMENT TABLE COMPONENT ============ */
 /* ============ ASSIGNMENT PAGE ============ */
@@ -203,21 +217,89 @@ h3 {
 @media only screen and (min-width: 40em)   {
 
 body {
-	max-width:58.75em; /*940px*/
+    margin: 0;
+    padding: 0;
+    background:white;
+    color:#03A9F4
+;
 	}
 
-h1 {
-	font-size: 6.25em; /*100px*/
-	line-height: 1.15;
-	margin-bottom:.2em;
-	}
 
-h2 {
-	font-size: 2.500em; /*40px*/
-	}
-
-h3 {
-	font-size: 2.313em; /*37px*/
-	}
 
 } /* end of 640px media */
+
+#checkForm{
+
+
+}
+
+
+#dob{
+    width:160px;
+    text-align: center;
+}
+
+.form-check{
+    width:500px;
+    padding-top:5px;
+    margin:auto;
+}
+
+.form-group{
+    margin:10px 0px;
+}
+
+ol>li{
+    margin-bottom: 20px;
+}
+.form-check-label{
+    font-weight: 500;
+}
+
+input[type="radio"]{
+    margin-right:5px ;
+   
+}
+
+#riskGroup{
+    margin-top:20px;
+}
+
+.formSub{
+    border-bottom:1px solid  #fff;
+    padding-bottom: 15px;
+    width:50%;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.risks{
+    font-weight: 600;
+}
+.btn{
+    border:none;
+}
+
+.btn-group{
+    width:300px;
+    margin:auto;
+
+}
+.sub{
+    background:#59F7DF;
+    margin: 10px auto;
+    color:#fff;
+    font-weight: 600;
+    width:100%;
+    padding:10px 0;
+    
+}
+
+#turnAway{
+
+}
+
+#yesTurn,
+#noTurn {
+    color: #0D47A1;
+}
