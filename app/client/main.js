@@ -111,7 +111,24 @@ Template.dashboard.onRendered(function (){
     $("#rightDash").append(node2);
     node2 = "<p> Last Name "+ Session.get("lName") +" </p>";
      $("#rightDash").append(node2);
-    
+    node2 = "<p> NickName "+ Session.get("nName") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Date Of Birth "+ Session.get("dob") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Gender "+ Session.get("gender") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Social Security Number "+ Session.get("ssn") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Consent "+ Session.get("consent") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Referred "+ Session.get("refer") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Risk 1 "+ Session.get("risk1") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Risk 2 "+ Session.get("risk2") +" </p>";
+     $("#rightDash").append(node2);
+     node2 = "<p> Risk 3 "+ Session.get("risk3") +" </p>";
+     $("#rightDash").append(node2);
     
 });
 
