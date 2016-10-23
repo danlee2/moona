@@ -30,3 +30,8 @@ Agencies.insert({name: "Worker Rehab", street: "Purdue Ave", city: "St. Louis", 
      // console.log("x is now"+Images.find().cursor);
     return AvailableServ;
   });
+
+ Meteor.publish('agencies', function () {
+     // console.log("x is now"+Images.find().cursor);
+    return Agencies;
+  });
