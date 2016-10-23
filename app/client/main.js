@@ -104,7 +104,11 @@ Template.dashboard.onRendered(function (){
     //alert(JSON.stringify(params));
 });
 
-
+Template.clientTimeline.helper({
+    checkInDate() {
+        return ClientHistory.find({fName: '', lName: '', dob: ''});
+    },
+});
 
 Router.map(function() {//Maps out all the routes
   //this.route('/dashboard', {path: '/dashboard'});
