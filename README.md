@@ -1,1 +1,1 @@
-# moona
+![moona logo](app/public/images/moona-logo.png)
