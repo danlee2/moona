@@ -6,7 +6,7 @@ Meteor.startup(() => {
     Services = new Mongo.Collection('services');
     Agencies = new Mongo.Collection('agencies');
     AvailableServ = new Mongo.Collection('availableServ');
-    
+     ClientHistory = new Mongo.Collection('clientHistory');
     
     Agencies.insert({name: "St james", street: "Purdue Ave", city: "St. Louis", state: "MO", phone: "555-555-5555", capacity: 200, free: 100});
     Agencies.insert({name: "Jupiter center", street: "Purdue Ave", city: "St. Louis", state: "MO", phone: "555-555-5555", capacity: 200, free: 100});

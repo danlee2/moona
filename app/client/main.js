@@ -10,7 +10,7 @@ Meteor.startup(() => {
   Services = new Mongo.Collection('services');
     Agencies = new Mongo.Collection('agencies');
     AvailableServ = new Mongo.Collection('availableServ');
-    
+     ClientHistory = new Mongo.Collection('clientHistory');
 });
 
 
@@ -103,12 +103,23 @@ Template.dashboard.onRendered(function (){
     }
    // $("#leftDash").css("backgroundColor", "blue");
     //alert(JSON.stringify(params));
+    
+    
+    
+    //// Right Appending
+    var node2 = "<p> First Name "+ Session.get("fName") +" </p>"
+    $("#rightDash").append(node2);
+    node2 = "<p> Last Name "+ Session.get("lName") +" </p>";
+     $("#rightDash").append(node2);
+    
+    
 });
 
-Template.clientTimeline.helper({
-    checkInDate() {
-        return ClientHistory.find({fName: '', lName: '', dob: ''});
-    },
+Template.clientTimeline.helpers({
+   checkInDate: function() {
+        //return ClientHistory.find({fName: '', lName: '', dob: ''});
+       return ClientHistory.find({});
+    }
 });
 
 Router.map(function() {//Maps out all the routes
@@ -122,7 +133,7 @@ Router.map(function() {//Maps out all the routes
         };
     }
 });*/
-    
+    this.route('clientTimeline');
     this.route('dashboard', {
   // get parameter via this.params
   path: '/posts/:fName&:lName&:nName&:dob&:gender&:ssn&:consent&:refer&:risk1&risk2&:risk3'
