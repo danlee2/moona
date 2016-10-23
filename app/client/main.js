@@ -96,7 +96,8 @@ Template.dashboard.onRendered(function (){
     while(i<length){
         var node = "<div class=\"agencyClass\" id=\"agency"+i+"\"> <p class=\"aName\"> "+aServ.fetch()[i].aName+" </p> </div> ";
         $("#leftDash").append(node);
-        node = "<p> Capacity:  "+aServ.fetch()[i].capacity+"<br> Free Space: "+aServ.fetch()[i].free+"</p>";
+        var ag = Agencies.findOne({name: aServ.fetch()[i].aName, street: aServ.fetch()[i].aStreet});
+        node = "<p> Capacity:  "+ag.capacity+"<br> Free Space: "+ag.free+"</p>";
         $("#agency"+i).append(node);
         i++;
     }
@@ -151,7 +152,8 @@ Router.map(function() {//Maps out all the routes
     },{
         waitOn: function() {
         return [
-            Meteor.subscribe('availableServices')
+            Meteor.subscribe('availableServices'),
+            Meteor.subscribe('agencies')
         ];
     }
     });
