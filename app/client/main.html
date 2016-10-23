@@ -1,0 +1,113 @@
+<head>
+  <title>Blaze-Moona</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
+
+<template name="dashboard">
+
+
+<h1> Home</h1>
+</template>
+
+
+<template name="checkin">
+
+    
+    <style>
+    
+    #turnModal {
+        
+        background-color: green;
+        visibility: hidden;
+        display: none;
+    }
+    </style>
+<h1> Check-In</h1>
+
+<div>
+      <h2>
+        FIELDS <i>(*required)</i>
+      </h2>
+      <h2>
+        GENERAL INFORMATION OF CLIENT
+      </h2>
+      <form >
+          <input type='text'  value='your first name' /><br />
+          <input type='text' value='your last name' /><br />
+          <input type='text'  value='name you go by' /><br />
+          <p><b>DOB</b></p>
+          <input type='text'  value='mm/dd/yyyy'/>
+          <p><b>Gender*</b></p>
+          <input type='radio' name='gender'  value='male' />Male<br />
+          <input type='radio' name='gender'  value='female' />Female<br />
+          <input type='radio' name='gender'  value='transgender' />Transgender<br />
+          <p><b>SSN</b></p>
+          <input type='number'  />
+          <p><b>Has consented to participate</b></p>
+          <input type='radio'  value='1' />Yes<br />
+          <input type='radio'  value='2' />No<br />
+          <p><b>Referred by</b></p>
+          <input type='radio'  value='1' />HRC<br />
+          <input type='radio'  value='2' />Family/Friend<br />
+          <input type='radio'  value='3' />Organization<br />
+          <input type='radio'  value='4' />Other<br />
+          <input type='radio'  value='4' />None<br />
+      </form>
+      
+    </div>
+    
+    <div>
+      <h2>
+        RISKS
+      </h2>
+      <ol>
+        <li>In the past year, Have You Been Accused of being a criminal sex offender?<br />
+        <input type='radio'  value ='1'/>Yes<br />
+        <input type='radio' id='risk-1'  value ='2'/>No<br /></li><br />
+
+        <li>In the past six months, how many times have you been taken to the hospital in an ambulance?<br />
+        <input type='radio'  value ='1'/>Yes<br />
+        <input type='radio'  value ='2'/>No</li><br />
+
+        <li>In the past six months, how many times have you been hospitalized as an in-patient, including hospitalizations in a mental health hospital?<br />
+        <input type='radio'  value ='1'/>Yes<br />
+        <input type='radio'  value ='2'/>No</li>
+
+      </ol>
+    </div>
+    <input id="turnAway" value="Turn Away" type="Button">
+<input id="takeIn" value="Take In" type="Button">
+    <div id="turnModal">
+    {{>turnAwayModal}}
+    
+    </div>
+</template>
+
+
+<template name="turnAwayModal">
+<p> Are you sure that you want turn away?</p>
+<input id="yesTurn" type="button" value="Yes">
+<input id="noTurn" type="button" value="No">
+    
+    
+</template>
